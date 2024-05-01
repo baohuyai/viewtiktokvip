@@ -1,10 +1,11 @@
 import os
 try:
-    import requests,colorama,prettytable
+    import requests,colorama,prettytable,flask
 except:
     os.system("pip install requests")
     os.system("pip install colorama")
     os.system("pip install prettytable")
+    os.system("pip install flask")
 import threading, requests, ctypes, random, json, time, base64, sys, re
 from prettytable import PrettyTable
 import random
