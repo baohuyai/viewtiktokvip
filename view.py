@@ -12,6 +12,9 @@ from time import strftime
 from colorama import init, Fore
 from urllib.parse import urlparse, unquote, quote
 from string import ascii_letters, digits
+from keep_alive import keep_alive
+
+
 xnhac = "\033[1;36m"
 do = "\033[1;31m"
 luc = "\033[1;32m"
@@ -48,7 +51,7 @@ class Zefoy:
         self.services_status = {}
         self.url = 'None'
         self.text = 'VIEWTIKTOK'
-        url1=input("\033[1;32mNhập \033[1;33mLink \033[1;36mVideo : \033[1;32m")
+        url1= 'https://www.tiktok.com/@danghoangbaohuy.milo/video/7362163069667069185?is_from_webapp=1&sender_device=pc&web_id=7352039272600176144' #input("\033[1;32mNhập \033[1;33mLink \033[1;36mVideo : \033[1;32m")
         self.url=url1
 
     def get_captcha(self):
@@ -229,7 +232,7 @@ class Zefoy:
 
             self.get_table()
             print(f"{xanh_la}Nhập Số:", end=' ')
-            service_id = input()
+            service_id = '4' #input()
             if service_id.isdigit():
                 service_id = int(service_id)
                 if service_id in range(1, len(self.services) + 1):
@@ -259,7 +262,7 @@ class Zefoy:
                 time.sleep(0)
 	
 if __name__ == "__main__":
-
+    keep_alive() 
     Z = Zefoy()
     threading.Thread(target=Z.check_config).start()
     threading.Thread(target=Z.update_name).start()
